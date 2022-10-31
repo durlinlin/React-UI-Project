@@ -32,14 +32,14 @@ function Hamburger(props) {
   
   return (
     <>
-      <ul class={isActive ? "menu" : "showMenu"}>
+      <ul className={isActive ? "menu" : "showMenu"}>
         {menuInfo.map((data) => (
           <li>
             <a data-name={data.title} onClick={handleMenuClick} className="menuItem">{data.title}</a>
           </li>
         ))}
       </ul>
-      <button class="hamburger" onClick={handleToggle}>
+      <button className={isActive ? "hamburger" : "hamburgerClicked"} onClick={handleToggle}>
         </button>
     </> 
   )

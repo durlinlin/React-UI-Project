@@ -10,7 +10,7 @@ function MovieCard(props) {
     {/* <div className="cardContainer" style={{ backgroundImage: `url(${props.image})`, backgroundSize: `cover` }}>
       {props.title}
       </div> */}
-    <div className="filmContainer">
+    <div className="filmContainer" onClick={(e)=> props.setCurrentMovie("none")}>
       <div className="filmInfo">
           <h1>{props.title}</h1>
           <div class="infoWrap">

@@ -8,7 +8,7 @@ import Hamburger from './Hamburger';
 
 function App() {
 const [movies, setMovies] = useState([])
-const [currentMovie, setCurrentMovie] = useState("")
+const [currentMovie, setCurrentMovie] = useState("none")
   let fetchData = () => {
     fetch("https://ghibliapi.herokuapp.com/films")
       .then((res) => res.json())
@@ -22,12 +22,12 @@ const [currentMovie, setCurrentMovie] = useState("")
   },[])
 
   return (
-    <div className="bigContainer">
+    <div className="bigContainer" >
       {/* {movies.map((data) => data.title.includes(currentMovie) &&
         (<Navbar id={data.id} title={data.title}>
         </Navbar>))} */}
       <Hamburger pickmovie={setCurrentMovie} />
-      <Navbar />
+      <Navbar   />
       <div className='contentContainer'>
       {movies.map((data) => data.title.includes(currentMovie) &&
         (<MovieCard
@@ -37,7 +37,8 @@ const [currentMovie, setCurrentMovie] = useState("")
           producer={data.producer}
           release_date={data.release_date}
           running_time={data.running_time}
-          description={data.description}>
+          description={data.description}
+          setCurrentMovie={setCurrentMovie}>
         </MovieCard>))}
       </div>
     </div>
